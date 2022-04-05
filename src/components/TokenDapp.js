@@ -18,7 +18,9 @@ export const TokenDapp = () => {
   const handleMintSubmit = (e) => {
     e.preventDefault()
     if (typeof(window) == 'object') {
-      execute(contractAddress, "mint", mintAmount, window.location.href )
+      const arr = new Array(mintAmount);
+      const sArr = JSON.stringify(arr)
+      execute(contractAddress, "mint", sArr, window.location.href )
     }
   }
 
